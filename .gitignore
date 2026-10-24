@@ -1,0 +1,15 @@
+# Archivos y documentos excluidos por solicitud
+ENTREGA_DOCUMENTO_COMPLEMENTARIO_UTN.md
+GUION_VIDEO_2A3_MINUTOS.md
+imprimir_informe_utn.html
+*entrega*
+*guion*
+*informe*
+*.pdf
+
+# Archivos de entorno y temporales
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
+.idea/

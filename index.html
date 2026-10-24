@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroMotors | Casa de Subastas de Autos Clásicos & Colección</title>
+    
+    <!-- Metadatos SEO On-Page Profesionales -->
+    <meta name="description" content="Casa oficial de subastas online de automóviles clásicos, deportivos históricos y vehículos de colección. Peritaje físico certificado, matching numbers y custodia de fianza.">
+    <meta name="keywords" content="subastas de autos clasicos, autos de coleccion, subasta ford mustang 1967, corvette stingray 1963, porsche carrera rs 1973, mercedes gullwing, vehiculos historicos">
+    <meta name="author" content="RetroMotors Auctioneers International">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="RetroMotors | Subastas de Autos Clásicos & Colección">
+    <meta property="og:description" content="Subastas de autos clásicos históricos con verificación física de chasis y motor, documentación de fábrica y pujas en vivo.">
+    <meta property="og:image" content="./img/mustang-1967.jpg">
+
+    <!-- Google Fonts & Material Symbols (Iconografía Oficial Profesional, sin emojis) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- Schema.org JSON-LD para E-commerce / Subastas de Vehículos -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoAuction",
+      "name": "RetroMotors Auctioneers",
+      "description": "Plataforma oficial de subastas de vehículos clásicos e históricos de colección.",
+      "url": "https://retromotors.com",
+      "telephone": "+54-11-4800-RETRO",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Alvear 1850",
+        "addressLocality": "Buenos Aires",
+        "addressCountry": "AR"
+      }
+    }
+    </script>
+
+    <!-- Estilos de la Aplicación -->
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <!-- Región aria-live para anuncios accesibles -->
+    <div id="sr-announcements" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Encabezado Principal y Navegación del Sitio -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#inicio" class="brand" aria-label="RetroMotors Subastas - Ir al inicio">
+                <div class="brand-info">
+                    <h1>RetroMotors</h1>
+                    <span>Subastas de Clásicos</span>
+                </div>
+            </a>
+
+            <!-- Buscador Integrado en el Navbar -->
+            <div class="nav-search-bar" role="search">
+                <span class="material-symbols-outlined nav-search-icon" aria-hidden="true">search</span>
+                <input type="search" id="nav-global-search" placeholder="Buscar auto clásico..." aria-label="Buscar vehículos clásicos">
+            </div>
+
+            <!-- Navegación de Vistas -->
+            <nav class="main-nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="#inicio" class="nav-link active" id="nav-inicio">Inicio</a></li>
+                    <li><a href="#catalogo" class="nav-link" id="nav-catalogo">Catálogo</a></li>
+                    <li><a href="#garantia" class="nav-link" id="nav-garantia">Garantía</a></li>
+                    <li><a href="#blog" class="nav-link" id="nav-blog">Guías</a></li>
+                    <li><a href="#contacto" class="nav-link" id="nav-contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!-- Acciones de Usuario -->
+            <div class="header-actions">
+                <!-- Botón de Publicar / Vender -->
+                <button type="button" class="btn-sell-nav" id="btn-open-sell-modal" aria-label="Publicar un vehículo clásico en subasta">
+                    <span class="material-symbols-outlined" aria-hidden="true">add_circle</span>
+                    <span>Vender</span>
+                </button>
+
+                <!-- Contenedor Dinámico de Usuario / Auth (Login / Registro / Perfil) -->
+                <div id="nav-user-container">
+                    <button type="button" class="btn-auth-nav" id="btn-open-auth-modal" aria-label="Iniciar sesión o registrarse">
+                        <span class="material-symbols-outlined" aria-hidden="true">account_circle</span>
+                        <span>Ingresar</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal Renderizado Dinámicamente por app.js -->
+    <main id="main-content" tabindex="-1">
+        <!-- El enrutador JS inyectará las vistas aquí -->
+    </main>
+
+    <!-- Pie de Página Profesional -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col">
+                <h4>RetroMotors Auctioneers</h4>
+                <p>
+                    Casa de subastas y corretaje especializada en la catalogación, peritaje de originalidad mecánica y transferencia segura de automóviles clásicos e históricos de alto valor patrimonial.
+                </p>
+                <p style="margin-top: 12px; font-size: 0.8125rem; color: var(--color-text-muted);">
+                    Lotes certificados bajo estándar de inspección de 100 puntos y peritaje de números coincidentes (Matching Numbers).
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Página de Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo de Subastas</a></li>
+                    <li><a href="#garantia">Garantía y Peritajes Técnicos</a></li>
+                    <li><a href="#blog">Guías de Colección y Mercado</a></li>
+                    <li><a href="#contacto">Contacto y Consignaciones</a></li>
+                    <li><a href="javascript:void(0)" id="link-footer-cms" style="color: var(--color-text-muted); font-size: 0.75rem;">Panel CMS</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Atención & Consignaciones</h4>
+                <p><strong>Teléfono:</strong> +54 (11) 4800-RETRO</p>
+                <p><strong>Consultas:</strong> subastas@retromotors.com</p>
+                <p><strong>Salón de Custodia:</strong> Av. Alvear 1850, Recoleta, CABA</p>
+                <p><strong>Horarios:</strong> Lunes a Viernes de 09:00 a 18:00 hs (Cita previa)</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Garantía y Estándares Web</h4>
+                <p>Accesibilidad universal certificada WCAG 2.1 AA.</p>
+                <p>Usabilidad de bajo esfuerzo cognitivo y recorrido sin fricción.</p>
+                <p>Seguridad y fianza notarial en todas las transacciones.</p>
+                <p>Plataforma CMS con control de inventario y estado en tiempo real.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                © 2026 RetroMotors Auctioneers International. Todos los derechos reservados.
+            </div>
+            <div style="font-size: 0.8125rem; color: var(--color-text-muted);">
+                Subastas Oficiales & Colección Histórica
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de la Aplicación -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
