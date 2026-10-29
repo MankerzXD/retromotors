@@ -554,7 +554,7 @@
                     </div>
 
                     <form id="form-publish-car">
-                        <div class="modal-form-grid" style="grid-template-columns: 1.5fr 0.8fr;">
+                        <div class="modal-form-grid">
                             <div class="form-group-compact">
                                 <label for="sell-title">Modelo y Versión <span class="required-star">*</span></label>
                                 <input type="text" id="sell-title" required placeholder="Ej: Jaguar E-Type Series 1 4.2 Coupe" />
@@ -1040,7 +1040,7 @@
                     En RetroMotors cada automóvil postulado a subasta es sometido a un peritaje forense vehicular antes de su publicación en catálogo:
                 </p>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px;">
+                <div class="garantia-protocol-grid">
                     <div style="background: var(--color-bg); padding: 20px; border: 1px solid var(--color-border); border-radius: var(--radius-sm);">
                         <div style="font-size: 1.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 4px;">100%</div>
                         <strong style="font-size: 1rem;">Números Coincidentes (Matching Numbers)</strong>
@@ -1310,46 +1310,48 @@
 
                     <div class="specs-table-card">
                         <h3>Ficha Técnica & Certificación de Originalidad</h3>
-                        <table class="specs-table" aria-label="Especificaciones mecánicas y registrales">
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Año de fabricación</th>
-                                    <td>${vehicle.year}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Número de Chasis (VIN)</th>
-                                    <td><code>${vehicle.vin}</code> (Verificado en chasis y formulario 12)</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Certificación Matching Numbers</th>
-                                    <td><strong>${vehicle.originalityRating}</strong></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Motorización</th>
-                                    <td>${vehicle.engine}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Transmisión</th>
-                                    <td>${vehicle.transmission}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Kilometraje / Millaje</th>
-                                    <td>${vehicle.mileage}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Color Exterior</th>
-                                    <td>${vehicle.exteriorColor}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Interior & Tapizados</th>
-                                    <td>${vehicle.interiorColor}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">País de Origen</th>
-                                    <td>${vehicle.origin}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="specs-table" aria-label="Especificaciones mecánicas y registrales">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Año de fabricación</th>
+                                        <td>${vehicle.year}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Número de Chasis (VIN)</th>
+                                        <td><code>${vehicle.vin}</code> (Verificado en chasis y formulario 12)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Certificación Matching Numbers</th>
+                                        <td><strong>${vehicle.originalityRating}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Motorización</th>
+                                        <td>${vehicle.engine}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Transmisión</th>
+                                        <td>${vehicle.transmission}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Kilometraje / Millaje</th>
+                                        <td>${vehicle.mileage}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Color Exterior</th>
+                                        <td>${vehicle.exteriorColor}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Interior & Tapizados</th>
+                                        <td>${vehicle.interiorColor}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">País de Origen</th>
+                                        <td>${vehicle.origin}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <div class="specs-table-card">
@@ -1815,34 +1817,36 @@
                             </button>
                         </div>
 
-                        <table class="admin-table" id="cms-vehicles-table">
-                            <thead>
-                                <tr>
-                                    <th>Vehículo Clásico</th>
-                                    <th>Año</th>
-                                    <th>Categoría</th>
-                                    <th>Puja Base</th>
-                                    <th>Puja Actual</th>
-                                    <th>Incremento Mínimo</th>
-                                    <th>Ofertas</th>
-                                    <th>Estado</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${appState.vehicles.map(v => `
+                        <div class="table-responsive">
+                            <table class="admin-table" id="cms-vehicles-table">
+                                <thead>
                                     <tr>
-                                        <td><strong>${v.title}</strong></td>
-                                        <td>${v.year}</td>
-                                        <td>${v.categoryName}</td>
-                                        <td>${formatUSD(v.startingBid)}</td>
-                                        <td style="color: var(--color-success); font-weight: 700;">${formatUSD(v.currentBid)}</td>
-                                        <td>+${formatUSD(v.minIncrement)}</td>
-                                        <td>${v.bidsCount}</td>
-                                        <td><span class="badge-table success">Publicado</span></td>
+                                        <th>Vehículo Clásico</th>
+                                        <th>Año</th>
+                                        <th>Categoría</th>
+                                        <th>Puja Base</th>
+                                        <th>Puja Actual</th>
+                                        <th>Incremento Mínimo</th>
+                                        <th>Ofertas</th>
+                                        <th>Estado</th>
                                     </tr>
-                                `).join('')}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    ${appState.vehicles.map(v => `
+                                        <tr>
+                                            <td><strong>${v.title}</strong></td>
+                                            <td>${v.year}</td>
+                                            <td>${v.categoryName}</td>
+                                            <td>${formatUSD(v.startingBid)}</td>
+                                            <td style="color: var(--color-success); font-weight: 700;">${formatUSD(v.currentBid)}</td>
+                                            <td>+${formatUSD(v.minIncrement)}</td>
+                                            <td>${v.bidsCount}</td>
+                                            <td><span class="badge-table success">Publicado</span></td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
 
                     <!-- Tab 2: SEO On-Page -->
@@ -1867,7 +1871,7 @@
                             </div>
                         </div>
 
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="cms-seo-grid">
                             <div>
                                 <label style="display: block; font-size: 0.8125rem; font-weight: 600; margin-bottom: 4px;">Jerarquía Semántica de Encabezados</label>
                                 <p style="font-size: 0.8125rem; color: var(--color-text-secondary);">
@@ -1896,32 +1900,34 @@
                             <span class="material-symbols-outlined" style="font-size: 18px; vertical-align: middle; color: #065f46;" aria-hidden="true">check_circle</span>
                             <strong>Auditoría superada:</strong> Se verificaron las imágenes con atributo ALT descriptivo, 100% de controles accesibles por teclado y ratios de contraste superiores a 4.5:1.
                         </div>
-                        <table class="admin-table">
-                            <thead>
-                                <tr>
-                                    <th>Criterio WCAG</th>
-                                    <th>Principio / Requisito</th>
-                                    <th>Estado</th>
-                                    <th>Evidencia Implementada</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                ${APP_DATA.wcagAuditChecklist.map(c => `
+                        <div class="table-responsive">
+                            <table class="admin-table">
+                                <thead>
                                     <tr>
-                                        <td><code>${c.code}</code></td>
-                                        <td><strong>${c.name}</strong></td>
-                                        <td><span class="badge-table success">${c.status}</span></td>
-                                        <td>${c.description}</td>
+                                        <th>Criterio WCAG</th>
+                                        <th>Principio / Requisito</th>
+                                        <th>Estado</th>
+                                        <th>Evidencia Implementada</th>
                                     </tr>
-                                `).join('')}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    ${APP_DATA.wcagAuditChecklist.map(c => `
+                                        <tr>
+                                            <td><code>${c.code}</code></td>
+                                            <td><strong>${c.name}</strong></td>
+                                            <td><span class="badge-table success">${c.status}</span></td>
+                                            <td>${c.description}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
 
                     <!-- Tab 4: Analítica & Métricas -->
                     <section id="tab-analytics" class="cms-panel-tab" aria-labelledby="analytics-heading">
                         <h3 id="analytics-heading" style="font-size: 1.125rem; margin-bottom: 16px;">Métricas del E-commerce & Subastas</h3>
-                        <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 24px;">
+                        <div class="cms-stats-grid">
                             <div class="hero-stats-card">
                                 <div class="stat-number">${APP_DATA.cmsAnalytics.totalVisitors}</div>
                                 <div class="stat-label">Visitantes únicos registrados</div>
